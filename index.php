@@ -10,11 +10,13 @@ date_default_timezone_set('Europe/Vilnius');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <?php print 'Aš, ' . date("l") . ' ir PHP' ?> </title>
+    <title> PHP lydės ir <?php print date('Y-m-d', strtotime('+1 day')) . '!' ?></title>
 </head>
 <body>
-    <h1>Juozukas - HTML <?php print 'ir PHP';?> asas jau nuo <?php print date("Y") . ' metų' ?> </h1>
-    <p>Viskas prasidėjo <?php print date("F") . ' mėnesio, ' . date("j") . ' dieną!'?></p>
+    <h1>Vardas - PHP su manim buvo ir <?php print date('H', strtotime('-1 hour')) . ' valandą!' ?>   </h1>
+
     
+    <p><?php print date('Y', strtotime('+1 year')) . ' ne už kalnų!'; ?></p>
 </body>
 </html>
+
