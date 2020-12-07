@@ -5,24 +5,55 @@ error_reporting(E_ALL);
 
 date_default_timezone_set('Europe/Vilnius');
 ?>
+<?php
+$page = $_SERVER['PHP_SELF'];
+$sec = "1";
+header("Refresh: $sec; url=$page");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> PHP lydės <?php print date('Y-m-d', strtotime('+' . rand(0, 10) . 'year')) . '!'; ?></title>
+<style>
+    div {
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+.dice1 {
+    background-image: url(images/1.png);
+}
+.dice2 {
+    background-image: url(images/2.png);
+}
+.dice3 {
+    background-image: url(images/3.png);
+}
+.dice4 {
+    background-image: url(images/4.png);
+}
+.dice5 {
+    background-image: url(images/5.png);
+}
+.dice6 {
+    background-image: url(images/6.png);
+}
+</style>
+
 </head>
+
+
 <body>
 
 
-    <!-- <h1 style='font-size: <?php print rand(0, 30);?>px;'>As keiciu savo dydi</h1>
-    <p style='color: rgb(<?php print rand(0, 255) . ',' .rand(0, 255) . ',' .rand(0, 255); ?>)'>As keiciu spalvas</p> -->
+    <div class='<?php print 'dice' . rand(1, 6); ?>'>
+        
+    </div>
 
-
-    
-    <img style='width: 200px; height: 200px' src="images/<?php print rand(1, 6)?>.png" alt="">
-
-    
+  
 </body>
 </html>
 
